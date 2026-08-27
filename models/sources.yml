@@ -1,4 +1,4 @@
-version: 2
+version: 2  # this is only for historical purpose and now its completely optional
 
 sources:
   - name: airbnb
