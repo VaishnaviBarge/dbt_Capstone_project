@@ -4,6 +4,13 @@ models:
 # ------------------------------------------
 
   - name: dim_listings_cleansed
+    data_tests:
+      - minimum_row_count:
+          arguments: 
+            min_row_count: 1000
+          # config: 
+          #   severity: warn  # we can add it here or directly in custom generic test also if we want we can override by writing seviarity over here 
+
     columns:
       - name: listing_id
         data_tests:  # earlier it was called tests now its depricated , still works
