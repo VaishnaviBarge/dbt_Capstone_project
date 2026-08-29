@@ -1,10 +1,11 @@
 {{
     config(
         materialized = 'incremental',
-        on_schema_change = 'fail',
+        on_schema_change = 'fail',  
         event_time='review_date'
     )
 }}
+--if you want to change schema in future u can do --full-refresh
 
 with src_reviews as (
     select * from {{ ref('src_reviews')}}
