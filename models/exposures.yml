@@ -1,0 +1,19 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://92be525e.us1a.app.preset.io/superset/dashboard/8/?edit=true&native_filters_key=3diEtptckuv9zJvxOS3NHw
+    description: Executive Dashboard about Airbnb listings and hosts
+      
+
+    depends_on:
+      - ref('dim_hosts_cleansed')
+      - ref('dim_listings_cleansed')
+      - ref('mart_fullmoon_reviews')
+
+    owner:
+      name: Vaishnavi Barge
+      email: vaishnavibarge0@gmail.com
