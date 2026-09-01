@@ -7,6 +7,15 @@
 with fct_reviews as (
     select * from {{ref('fct_reviews')}} 
 ),
+{{
+    config(
+        materialized = 'table',
+        tags = ['fact']  
+    )
+}}
+
+-- need to read documents later for tag and flag in detail
+
 full_moon_dates as (
     select * from {{ref('seed_full_moon_dates')}}
 )

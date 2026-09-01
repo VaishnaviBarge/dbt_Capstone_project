@@ -1,3 +1,12 @@
+{# {{
+    config(
+        materialized = 'view',
+        event_time = 'created_at' 
+    )
+}} #}
+-- this will help in debugging with the recent data by using the command like dbt run -s dim_listings_w_hosts --sample "10 days"
+
+
 with src_listing as (
     select * from {{ ref('src_listing')}}
 )
