@@ -1,3 +1,10 @@
+{# {{
+    config(
+        materialized = 'view',
+        event_time = 'created_at' 
+    )
+}} #}
+-- this will help in debugging with the recent data 
 with src_listing as (
     select * from {{ ref('src_listing')}}
 )
