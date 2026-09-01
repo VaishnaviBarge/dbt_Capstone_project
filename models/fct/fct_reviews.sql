@@ -26,7 +26,6 @@ WHERE review_text is not null
     {{ log('Loading ' ~ this ~ ' incrementally (all missing dates)', info=True)}}
   {% endif %}
 {% endif %}
-
 -- dbt run -s fct_reviews --vars '{start_date: "2025-02-15 00:00:00",end_date: "2025-03-15 23:59:59"}'
 
 
