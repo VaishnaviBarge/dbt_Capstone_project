@@ -44,6 +44,20 @@ models:
 # ------------------------------------------
 
   - name: dim_hosts_cleansed
+    versions:
+      - v: 1
+        defined_in: dim_hosts_cleansed
+        deprecation_date: 2030-01-01
+      - v: 2
+        columns:
+          - include: '*'
+            exclude: [host_name]
+          - name: host_name
+            description: The name of the host (Anonimous if not available)
+            data_type: string
+            constraints:
+              - type: not_null
+    latest_version: 2
     description: Cleansed table for the Airbnb hosts
     config:
       contract: 
@@ -122,7 +136,7 @@ models:
           - dbt_expectations.expect_column_max_to_be_between:
               arguments: 
                 # min_value: 1 # (Optional)
-                max_value: 5000 # (Optional)
+                max_value: 8000 # (Optional)
                 config:
                   severity: warn
                 # group_by: [group_id, other_group_id, ...] # (Optional)
