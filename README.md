@@ -28,7 +28,6 @@ dbt_capstone_project/
 
 - **Orchestration**: dbt Cloud
 - **Data Warehouse**: Snowflake
-- **Language**: Python (100%)
 
 ## 🔧 Project Configuration
 
@@ -69,8 +68,7 @@ dbt_capstone_project/
    - In dbt Cloud, set up a new project with Snowflake as the connection
    - Enter your Snowflake credentials:
      - Account URL
-     - Username
-     - Password (or API token)
+     - Key pair
      - Database name
      - Schema
      - Warehouse name
@@ -99,7 +97,7 @@ dbt debug
 dbt build
 ```
 
-## 🚀 Running dbt with dbt Cloud
+## Running dbt with dbt Cloud
 
 ### Via dbt Cloud UI
 
@@ -108,30 +106,6 @@ dbt build
 3. Monitor run logs and test results in real-time
 4. View generated documentation
 
-### Via CLI (if using dbt from your machine)
-
-```bash
-# Install dependencies
-dbt deps
-
-# Run all models
-dbt run
-
-# Run and test with build
-dbt build
-
-# Run specific model
-dbt run --select model_name
-
-# Test data quality
-dbt test
-
-# Generate documentation
-dbt docs generate
-
-# Clean compiled artifacts
-dbt clean
-```
 
 ## 📊 Data Modeling Approach
 
@@ -141,13 +115,13 @@ This project follows the **Kimball dimensional modeling** methodology:
 - **Facts** (`fct/`): Granular business events and metrics
 - **Sources** (`src/`): Raw data source abstractions for lineage tracking and documentation
 
-## 🔐 Access Control
+##  Access Control
 
 Grant-based access is configured for Snowflake roles:
 - `transform` role: Full transformation and model-building rights
 - `reporter` role: Read-only access for reporting and analysis
 
-## 📈 dbt Cloud Features Utilized
+##  dbt Cloud Features Utilized
 
 - **Git Integration**: Automatic detection of repository changes
 - **Scheduled Runs**: Regular model execution via dbt Cloud jobs
@@ -156,7 +130,7 @@ Grant-based access is configured for Snowflake roles:
 - **Notifications**: Alert on job success/failure
 - **Lineage**: Visual data lineage tracking in dbt Cloud interface
 
-## 📝 Resources
+##  Resources
 
 - [dbt Cloud Documentation](https://docs.getdbt.com/docs/dbt-cloud/about-cloud-setup)
 - [Snowflake Setup Guide](https://docs.getdbt.com/docs/core-connections/snowflake-setup)
@@ -165,15 +139,4 @@ Grant-based access is configured for Snowflake roles:
 - [dbt Community](https://getdbt.com/community)
 - [dbt Blog](https://blog.getdbt.com/)
 
-## 🤝 Contributing
 
-This is a capstone project. Contributions and suggestions are welcome!
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
----
-
-**Last Updated**: September 3, 2026  
-**Maintained by**: VaishnaviBarge
