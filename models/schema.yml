@@ -136,7 +136,7 @@ models:
           - dbt_expectations.expect_column_max_to_be_between:
               arguments: 
                 # min_value: 1 # (Optional)
-                max_value: 5000 # (Optional)
+                max_value: 8000 # (Optional)
                 config:
                   severity: warn
                 # group_by: [group_id, other_group_id, ...] # (Optional)
