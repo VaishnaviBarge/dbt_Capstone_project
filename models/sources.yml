@@ -3,9 +3,16 @@ version: 2  # this is only for historical purpose and now its completely optiona
 sources:
   - name: airbnb
     schema: raw
+
     tables:
+
       - name: listings
         identifier: raw_listings
+
+        config:
+          loaded_at_field: created_at
+          freshness: 
+            warn_after: {count: 1, period: day}
 
         columns:
 
@@ -15,7 +22,7 @@ sources:
                   arguments: 
                     value: 4
                   # quote_values: true # (Optional. Default is 'true'.)
-                  # group_by: [group_id, other_group_id, ...] # (Optional)
+                  # group_by: [group_id, oth er_group_id, ...] # (Optional)
                   # row_condition: "id is not null" # (Optional)
 
           - name: price
@@ -29,10 +36,14 @@ sources:
               
       - name: hosts
         identifier: raw_hosts
+        config:
+          loaded_at_field: updated_at 
+          freshness: 
+            warn_after: {count: 1, period: hour}
       - name: reviews
         identifier: raw_reviews
         config:
           loaded_at_field: date
           freshness: 
             warn_after: {count: 1, period: hour}
-            # error_after: {count: 24, period: hour}
+            # error_after: {count: 24, period: hour} 
