@@ -8,12 +8,14 @@
 
 
 with src_listing as (
-    select * from {{ ref('src_listing') }}
+    select 
+        * 
+    from {{ ref('src_listing') }}
 )
 
 select
     listing_id,listing_name,room_type,host_id,
-    REPLACE( price_str, '$' )::NUMBER( 10, 2 ) as price,
+     {{ clean_price('price_str') }} as price,
     created_at,
     updated_at,
     case
