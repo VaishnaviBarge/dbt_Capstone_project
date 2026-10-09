@@ -16,7 +16,7 @@ models:
     data_tests:
       - minimum_row_count:
           arguments: 
-            min_row_count: 1000
+            min_row_count: 2000
           # config: 
           #   severity: warn  # we can add it here or directly in custom generic test also if we want we can override by writing seviarity over here 
           # Don't assume that every dbt constraint is automatically enforced in every situation.
