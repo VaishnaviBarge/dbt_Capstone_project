@@ -8,7 +8,9 @@
 --if you want to change schema in future u can do --full-refresh
 
 with src_reviews as (
-    select * from {{ ref('src_reviews')}}
+    select
+     * 
+    from {{ ref('src_reviews')}}
 )
 
 SELECT 
