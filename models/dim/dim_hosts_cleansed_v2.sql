@@ -15,5 +15,4 @@ select host_id,
     is_superhost,
     created_at,
     updated_at,
-    
 from src_hosts
