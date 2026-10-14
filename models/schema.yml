@@ -131,7 +131,7 @@ models:
   - name: dim_listings_w_hosts
     description: Cleansed table for the Airbnb listings with hosts
 
-    tests:
+    data_tests:
 
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
           arguments:
@@ -144,9 +144,15 @@ models:
 
     columns:
 
+      - name: host_is_superhost
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['t']
+
       - name: price
 
-        tests:
+        data_tests:
 
           - dbt_expectations.expect_column_values_to_be_of_type:
               arguments:
