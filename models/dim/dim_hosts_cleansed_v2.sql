@@ -11,10 +11,7 @@ date_spine AS (
 
 )
 select host_id,
-    NVL(
-        host_name,
-       'anonimous'
-   ) AS host_name,
+    NVL( host_name, 'anonimous' ) AS host_name,
     is_superhost,
     created_at,
     updated_at,
