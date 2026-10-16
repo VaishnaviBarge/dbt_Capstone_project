@@ -1,7 +1,10 @@
 models:
 
 # ------------------------------------------
-
+  - name: mart_fullmoon_reviews
+    config:
+      grants:
+        select: ['reporter']
   - name: dim_listings_cleansed
     description: Cleansed table which contains Airbnb listings.
     config:

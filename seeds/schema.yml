@@ -1,0 +1,9 @@
+version: 2
+
+seeds:
+  - name: seed_full_moon_dates
+    config:
+      grants:
+        select:
+          - transform
+          - reporter
