@@ -7,3 +7,5 @@ snapshots:
       strategy: timestamp
       # what if delete the record
       hard_deletes: invalidate
+      grants:
+        select: ['reporter', 'transform']
